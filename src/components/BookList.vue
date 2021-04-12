@@ -3,16 +3,18 @@
     <h1>{{ title }}</h1>
     <ul>
       <book-item v-for="book in books" :book="book" v-bind:key="book.title"></book-item>
-      <book-form @addBook="appendBook"></book-form>
     </ul>
     <hr>
     <h2>Filtered Books By Ownership</h2>
     <select name="holding" id="holding" v-model="holding">
+      <hr>
       <option v-for="filter in filters" v-bind:key="filter" :value="filter">{{ filter }}</option>
     </select>
         <ul>
       <book-item v-for="book in filteredBooks" :book="book" v-bind:key="book.title"></book-item>
     </ul>
+    <hr>
+      <book-form @addBook="appendBook"></book-form>
   </div>
 </template>
 
